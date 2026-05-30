@@ -37,6 +37,22 @@ BTC Address: bc1pppphk840d8etdgav2xm3yvkz4me86cnm3cmzcthhqd6a3nda8e4qx6kfh7
 BTC Privkey (hex): f6a4665fcf77e9e83085aa473757b7550e93261e58ec2bd3f8cda8ea42e3efb9
 ```
 
+Run Taproot generator as standalone tool:
+```
+$ cd taproot
+$ make
+$ ./taproot_vanitygen -1 bc1pp
+Pattern: bc1pp
+BTC Address: bc1pp...
+BTC Privkey (hex): ...
+```
+
+Cross-check standalone Taproot derivation against original `vanitygen++`:
+```
+$ cd taproot
+$ ./test_harness.sh
+```
+
 Generate an ETH vanity address:
 ```
 $ ./vanitygen++ -C ETH 0x999999
