@@ -76,6 +76,15 @@ $ cd splittaproot
 $ ./test_harness.sh
 ```
 
+Run the isolated optimized Taproot/SplitTaproot suite (GPU-emulated backend with CPU fallback):
+```
+$ cd optimized
+$ make
+$ ./taproot_optimized_vanitygen -1 --backend gpu bc1pp
+$ ./taproot_optimized_vanitygen bob-mine --alice-pub <AlicePubkeyHex> -1 bc1pp
+$ ./test_harness.sh
+```
+
 Generate an ETH vanity address:
 ```
 $ ./vanitygen++ -C ETH 0x999999
