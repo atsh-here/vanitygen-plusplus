@@ -53,6 +53,29 @@ $ cd taproot
 $ ./test_harness.sh
 ```
 
+Run split-key Taproot generator (Alice/Bob flow) as standalone tool:
+```
+$ cd splittaproot
+$ make
+$ ./splittaproot_vanitygen alice-gen
+Alice Pubkey (hex): ...
+Alice Privkey (hex): ...
+
+$ ./splittaproot_vanitygen bob-mine --alice-pub <AlicePubkeyHex> -1 bc1pp
+Pattern: bc1pp
+BTC Address: bc1pp...
+Bob PrivkeyPart (hex): ...
+
+$ ./splittaproot_vanitygen combine --alice-priv <AlicePrivHex> --bob-part <BobPrivkeyPartHex> --expected <Address>
+Verification: OK
+```
+
+Run full split-key Taproot + original math consistency harness:
+```
+$ cd splittaproot
+$ ./test_harness.sh
+```
+
 Generate an ETH vanity address:
 ```
 $ ./vanitygen++ -C ETH 0x999999
